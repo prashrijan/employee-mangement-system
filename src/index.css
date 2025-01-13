@@ -11,5 +11,20 @@ body {
 }
 
 #taskList::-webkit-scrollbar {
-  display: none;
+  width: 10px; /* Width of the scrollbar */
+}
+
+#taskList::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+#taskList::-webkit-scrollbar-thumb {
+  background: #007bff; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid #f1f1f1; /* Adds spacing and a border around the thumb */
+}
+
+#taskList::-webkit-scrollbar-thumb:hover {
+  background: #0056b3; /* Darker color when hovering over the thumb */
 }
