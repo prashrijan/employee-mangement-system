@@ -5,6 +5,7 @@ import AdminDashboard from "./components/dashboard/AdminDashboard";
 import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthProvider";
+import { data } from "autoprefixer";
 
 const App = () => {
   const authData = useContext(AuthContext);
@@ -24,32 +25,72 @@ const App = () => {
     }
   }, []);
 
-  console.log(user);
-  console.log(loggedInUserData);
-
   const handleLogin = (email, password) => {
-    if (email == "admin@me.com" && password == "123") {
+    // if (authData) {
+    //   const loggedInAdmin = authData.adminData.find((admin) => {
+    //     admin.email.toLowerCase() === email.toLowerCase() &&
+    //       admin.password === password;
+    //   });
+    //   setUser("admin");
+    //   setLoggedInUserData(loggedInAdmin);
+    //   localStorage.setItem(
+    //     "loggedInUser",
+    //     JSON.stringify({ role: "admin", data: loggedInAdmin })
+    //   );
+    // } else if (authData) {
+    //   const loggedInEmployee = authData.employeesData.find(
+    //     (employee) =>
+    //       employee.email.toLowerCase() === email.toLowerCase() &&
+    //       employee.password === password
+    //   );
+    //   setUser("employee");
+    //   setLoggedInUserData(loggedInEmployee);
+    //   localStorage.setItem(
+    //     "loggedInUser",
+    //     JSON.stringify({ role: "employee", data: loggedInEmployee })
+    //   );
+    // } else {
+    //   setUser(null);
+    // }
+
+    if (!authData) {
+      setUser(null);
+      return;
+    }
+
+    const loggedInAdmin = authData.adminData.find(
+      (admin) =>
+        admin.email.toLowerCase() === email.toLowerCase() &&
+        password === admin.password
+    );
+
+    if (loggedInAdmin) {
       setUser("admin");
-      localStorage.setItem("loggedInUser", JSON.stringify({ role: "admin" }));
-    } else if (authData) {
-      const loggedInEmployee = authData.employeesData.find(
-        (employee) =>
-          employee.email.toLowerCase() === email.toLowerCase() &&
-          employee.password === password
+      setLoggedInUserData(loggedInAdmin);
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify({ role: "admin", data: loggedInAdmin })
       );
+      return;
+    }
+
+    const loggedInEmployee = authData.employeesData.find(
+      (employee) =>
+        employee.email.toLowerCase() === email.toLowerCase() &&
+        employee.password === password
+    );
+
+    if (loggedInEmployee) {
       setUser("employee");
       setLoggedInUserData(loggedInEmployee);
       localStorage.setItem(
         "loggedInUser",
         JSON.stringify({ role: "employee", data: loggedInEmployee })
       );
-    } else {
-      setUser(null);
+      return;
     }
+    setUser(null);
   };
-
-  console.log(user);
-  console.log(loggedInUserData);
 
   return (
     <>

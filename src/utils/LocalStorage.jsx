@@ -6,8 +6,9 @@ const employees = [
     password: "123",
     tasks: [
       {
-        title: "Task 1",
-        description: "Description of task 1",
+        title: "Develop Login Feature",
+        description:
+          "Implement user authentication and login functionality using secure methods.",
         date: "2025-01-12",
         category: "Development",
         active: true,
@@ -16,8 +17,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 2",
-        description: "Description of task 2",
+        title: "Test Payment Gateway",
+        description:
+          "Perform end-to-end testing of the payment gateway integration.",
         date: "2025-01-13",
         category: "Testing",
         active: true,
@@ -26,8 +28,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 3",
-        description: "Description of task 3",
+        title: "Prepare API Documentation",
+        description:
+          "Write comprehensive API documentation for developers and stakeholders.",
         date: "2025-01-14",
         category: "Documentation",
         active: false,
@@ -50,8 +53,9 @@ const employees = [
     password: "123",
     tasks: [
       {
-        title: "Task 1",
-        description: "Description of task 1",
+        title: "Build Dashboard UI",
+        description:
+          "Design and develop the user interface for the analytics dashboard.",
         date: "2025-01-12",
         category: "Development",
         active: true,
@@ -60,8 +64,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 2",
-        description: "Description of task 2",
+        title: "Perform Unit Testing",
+        description:
+          "Write and execute unit tests for the newly added features.",
         date: "2025-01-13",
         category: "Testing",
         active: true,
@@ -84,8 +89,9 @@ const employees = [
     password: "123",
     tasks: [
       {
-        title: "Task 1",
-        description: "Description of task 1",
+        title: "Code Refactoring",
+        description:
+          "Improve the readability and maintainability of the codebase.",
         date: "2025-01-12",
         category: "Development",
         active: true,
@@ -94,8 +100,8 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 2",
-        description: "Description of task 2",
+        title: "Update Design Mockups",
+        description: "Revise the design mockups based on client feedback.",
         date: "2025-01-13",
         category: "Design",
         active: true,
@@ -104,8 +110,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 3",
-        description: "Description of task 3",
+        title: "Resolve Deployment Issue",
+        description:
+          "Investigate and fix issues preventing successful deployment.",
         date: "2025-01-14",
         category: "Deployment",
         active: false,
@@ -114,8 +121,8 @@ const employees = [
         failed: true,
       },
       {
-        title: "Task 4",
-        description: "Description of task 4",
+        title: "Write Test Cases",
+        description: "Develop detailed test cases for functional testing.",
         date: "2025-01-15",
         category: "Testing",
         active: true,
@@ -138,8 +145,8 @@ const employees = [
     password: "123",
     tasks: [
       {
-        title: "Task 1",
-        description: "Description of task 1",
+        title: "Implement Backend API",
+        description: "Create and deploy RESTful APIs for data management.",
         date: "2025-01-12",
         category: "Development",
         active: true,
@@ -148,8 +155,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 2",
-        description: "Description of task 2",
+        title: "Redesign Landing Page",
+        description:
+          "Enhance the aesthetics and usability of the website's landing page.",
         date: "2025-01-13",
         category: "Design",
         active: true,
@@ -158,8 +166,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 3",
-        description: "Description of task 3",
+        title: "Fix Documentation Errors",
+        description:
+          "Review and correct inaccuracies in project documentation.",
         date: "2025-01-14",
         category: "Documentation",
         active: false,
@@ -168,8 +177,9 @@ const employees = [
         failed: true,
       },
       {
-        title: "Task 4",
-        description: "Description of task 4",
+        title: "Perform Regression Testing",
+        description:
+          "Ensure recent changes haven’t negatively affected existing functionality.",
         date: "2025-01-15",
         category: "Testing",
         active: true,
@@ -178,8 +188,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 5",
-        description: "Description of task 5",
+        title: "Monitor Deployment Logs",
+        description:
+          "Analyze deployment logs to identify any warnings or errors.",
         date: "2025-01-16",
         category: "Deployment",
         active: false,
@@ -202,8 +213,9 @@ const employees = [
     password: "123",
     tasks: [
       {
-        title: "Task 1",
-        description: "Description of task 1",
+        title: "Develop Notification System",
+        description:
+          "Implement a system for sending email and SMS notifications.",
         date: "2025-01-12",
         category: "Development",
         active: true,
@@ -212,8 +224,9 @@ const employees = [
         failed: false,
       },
       {
-        title: "Task 2",
-        description: "Description of task 2",
+        title: "Fix Critical Bug",
+        description:
+          "Address the critical bug in the user registration module.",
         date: "2025-01-13",
         category: "Testing",
         active: true,
@@ -222,8 +235,9 @@ const employees = [
         failed: true,
       },
       {
-        title: "Task 3",
-        description: "Description of task 3",
+        title: "Prepare Deployment Strategy",
+        description:
+          "Draft a strategy for deploying the new application version.",
         date: "2025-01-14",
         category: "Deployment",
         active: false,
@@ -246,6 +260,7 @@ const admin = [
     id: 1,
     email: "admin@example.com",
     password: "123",
+    firstName: "Prashrijan",
   },
 ];
 
