@@ -5,10 +5,9 @@ import AdminDashboard from "./components/dashboard/AdminDashboard";
 import { getLocalStorage, setLocalStorage } from "./utils/LocalStorage";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthProvider";
-import { data } from "autoprefixer";
 
 const App = () => {
-  const authData = useContext(AuthContext);
+  const [authData] = useContext(AuthContext);
   const [user, setUser] = useState(null);
   const [loggedInUserData, setLoggedInUserData] = useState(null);
 
@@ -25,34 +24,9 @@ const App = () => {
     }
   }, []);
 
-  const handleLogin = (email, password) => {
-    // if (authData) {
-    //   const loggedInAdmin = authData.adminData.find((admin) => {
-    //     admin.email.toLowerCase() === email.toLowerCase() &&
-    //       admin.password === password;
-    //   });
-    //   setUser("admin");
-    //   setLoggedInUserData(loggedInAdmin);
-    //   localStorage.setItem(
-    //     "loggedInUser",
-    //     JSON.stringify({ role: "admin", data: loggedInAdmin })
-    //   );
-    // } else if (authData) {
-    //   const loggedInEmployee = authData.employeesData.find(
-    //     (employee) =>
-    //       employee.email.toLowerCase() === email.toLowerCase() &&
-    //       employee.password === password
-    //   );
-    //   setUser("employee");
-    //   setLoggedInUserData(loggedInEmployee);
-    //   localStorage.setItem(
-    //     "loggedInUser",
-    //     JSON.stringify({ role: "employee", data: loggedInEmployee })
-    //   );
-    // } else {
-    //   setUser(null);
-    // }
+  console.log(authData);
 
+  const handleLogin = (email, password) => {
     if (!authData) {
       setUser(null);
       return;
@@ -96,9 +70,9 @@ const App = () => {
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user === "employee" ? (
-        <EmployeeDashboard data={loggedInUserData} />
+        <EmployeeDashboard data={loggedInUserData} changeUser={setUser} />
       ) : user === "admin" ? (
-        <AdminDashboard data={loggedInUserData} />
+        <AdminDashboard data={loggedInUserData} changeUser={setUser} />
       ) : (
         ""
       )}
